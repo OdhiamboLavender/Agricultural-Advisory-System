@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "../MH"
+		},
+		{
+			"path": "../WEBSITE"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Lavvy_Agricultural_System"
+	}
+}

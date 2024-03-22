@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agricultural Advisory System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-XrRJSTdYZd2V5bLbYWtSpvbQyL8fuMCLyP1UInz2J9+K58aA3FGkSYOJ1OHlZ9tN" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+
+    <header>
+        <h1>Agricultural Advisory System</h1>
+        <p>Your Source for Farming Guidance</p>
+    </header>
+
+    <nav class="navbar">
+       
+        <a href="#" onclick="showContent('main-content')">Home</a>
+        <a href="soil_data.html" onclick="showContent('soil-content')">Soil Data</a>
+        <a href="weather_data.html" onclick="showContent('weather-content')">Weather Data</a>
+        <a href="crop_recommendation.html" onclick="showContent('crop-content')">Crop Recommendations</a>
+        <a href="login.php" id="get-started-link" onclick="showContent('login')">Log in</a>
+    </nav>
+   
+
+    <section id="home-carousel">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+            </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="lb.jpg" class="d-block w-100" alt="Image 1">
+            </div>
+            <div class="carousel-item">
+                <img src="sd.jpg" class="d-block w-100" alt="Image 2">
+            </div>
+            
+            <div class="carousel-item">
+                <img src="ar.jpg" class="d-block w-100" alt="Image 2">
+            </div>
+            <div class="carousel-item">
+                <img src="k.jpg" class="d-block w-100" alt="Image 3">
+            </div>
+            <div class="carousel-item">
+                <img src="w.jpg" class="d-block w-100" alt="Image 4">
+            </div>
+            <div class="carousel-item">
+                <img src="avi.jpg" class="d-block w-100" alt="Image 5">
+            </div>
+            <div class="carousel-item">
+                <img src="av.jpg" class="d-block w-100" alt="Image 6">
+            </div>
+            <div class="carousel-item">
+                <img src="v.jpg" class="d-block w-100" alt="Image 7">
+            </div>
+        </div>
+    </section>
+        <!-- Add carousel controls -->
+        <section id="main-content">
+            <h2>Welcome to our Agricultural Advisory System</h2>
+            <p>
+                Our system provides farmers with timely and personalized advice
+                to enhance crop yields and promote sustainable farming practices.
+                Explore the latest agricultural insights and recommendations.
+            </p>
+           <b> Farmer Advisory</b><br>
+            A  Web Portal for the purpose of helping farmers in crop planning and crop handling built as a part of Course project CS305.
+            The portal gives information on Crop Handling techniques (water requirements, soil type requirement, etc) as well as recommended crops based on attributes such as location. The portal also provides a discussion space for farmers and experts in the related fields.
+                   
+            <div class="image-container">
+                <img src="a.jpg" alt="Description of the image">
+            </div>
+            <h2>OPTIMAL YIELD</h2>
+            <p>Several factors contribute to achieving a better harvest in agriculture. Here are some key reasons:
+                Soil Quality: Rich and fertile soil with appropriate pH levels and adequate nutrients supports healthy plant growth, leading to better yields.</p><br>
+            
+                Climate and Weather Conditions: Favorable weather conditions, including optimal temperature, adequate rainfall, and appropriate humidity levels, promote robust plant growth and minimize the risk of crop damage due to extreme weather events.</br>
+                
+                Water Management: Efficient irrigation practices ensure that crops receive the right amount of water at the right time, preventing both water stress and waterlogging, which can negatively impact yields.</p>
+            <div class="image-container">
+                <img src="b.jpg" alt="Description of the image">
+            </div>
+            <p>Crop Variety Selection: Choosing crop varieties that are well-suited to the local climate, soil type, and pest resistance can significantly improve yield outcomes.
+            
+                Pest and Disease Management: Implementing effective pest and disease control measures, such as integrated pest management (IPM) strategies, helps protect crops from damage and minimizes yield losses.</p>
+                
+                Nutrient Management: Providing crops with the appropriate balance of essential nutrients through fertilization and soil amendments ensures healthy plant growth and higher yields.</br>
+                
+                Weed Control: Managing weeds effectively through techniques such as mechanical cultivation, mulching, and herbicide application prevents competition for resources and optimizes crop growth.
+                
+                Timely Planting and Harvesting: Planting crops at the optimal time and harvesting them when they reach maturity ensures maximum yield potential and quality.</p>
+            
+            <div class="image-container">
+                <img src="g.jpg" alt="Description of the image">
+            </div>
+            
+            <p>Proper soil utilization, also known as sustainable soil management, offers numerous advantages for agriculture, the environment, and society as a whole. Some of the key benefits include:
+            
+                Improved Crop Yields: Proper soil utilization ensures that soil fertility is maintained or enhanced over time, resulting in higher crop yields. This is achieved through practices such as soil conservation, organic matter management, and balanced nutrient application.</p>
+                
+                Enhanced Soil Health: Sustainable soil management practices promote soil health by maintaining soil structure, reducing erosion, and enhancing soil biodiversity. Healthy soils are more resilient to environmental stresses and provide a better environment for plant roots and soil organisms.</p>
+                
+                Reduced Soil Erosion: By implementing conservation practices such as contour farming, terracing, and cover cropping, proper soil utilization helps reduce soil erosion caused by water and wind. This protects valuable topsoil, preserves soil fertility, and maintains land productivity.</p>
+            <div class="image-container">
+                <img src="ds.jpg" alt="Description of the image">
+            </div>
+            
+            <p>Climate Change Mitigation: Healthy soils act as a carbon sink, sequestering carbon dioxide from the atmosphere and helping mitigate climate change. Practices such as conservation tillage, crop residue management, and agroforestry enhance soil organic carbon storage and contribute to climate change adaptation and mitigation efforts.</p>
+            
+                Enhanced Biodiversity: Proper soil utilization promotes habitat diversity and supports a wide range of soil organisms, including beneficial microbes, earthworms, and insects. Healthy soils provide essential ecosystem services, such as nutrient cycling, pest regulation, and soil structure improvement, which benefit agricultural productivity and biodiversity conservation.</P>
+                
+                Sustainable Land Use: Sustainable soil management practices help maintain the long-term productivity and resilience of agricultural lands, ensuring their viability for future generations. By adopting practices that conserve soil resources, farmers can sustainably utilize land for food production while preserving natural ecosystems and biodiversity.</p>
+                
+                Economic Benefits: Improved crop yields, reduced input costs, and enhanced ecosystem services associated with proper soil utilization can lead to economic benefits for farmers and rural communities. Sustainable soil management practices contribute to long-term agricultural productivity, profitability, and livelihood security.</p>
+        </section>
+    
+    <!-- Add Bootstrap JS (Popper.js and Bootstrap JS) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-X48EgclWdUp/N0LczWxBxLqa0xZ4qNzulD1AS6OFC7pP1YIKI9GXE+g/k1TKMIlZ" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+Wy6p8eW5g9M5FVoCprgxgXiPn8VEJ9Rqu" crossorigin="anonymous"></script>
+
+
+
+
+    <section id="soil-content" style="display: none;">
+        <h2>Soil Data</h2>
+        <h2><i>Importance of Soil
+        </i></h2>
+        <li>Soil allows the growth of plants. It supplies water and nutrients that are required in the growth of plants.</li>
+
+           <li>The soil is the main part of agriculture. Different types of soils support different kinds of crops. Without agriculture, food, shelter and clothing are not possible.</li> 
+            
+           <li> Many microorganisms live in the soil.</li>
+            
+           <li>Underground water is used for various purposes.</li>
+       
+       <h2>Soil Profile</h2>
+       <p>The soil consists of distinct layers which are also called Horizons of the Soil.
+
+        The Soil Profile is a vertical section of the soil which depicts all the layers of the soil. The layers of the soil can be seen if we dig deep through it like while creating a well or while laying the foundation of a building.</p>
+          <li>Humus – The decaying matter in the soil is called Humus.</li>
+
+           <li> Weathering - Soil is formed when rocks break down. This process is also called Weathering. The weathering of rocks takes place because of rains, flowing water, winds, temperature and climatic conditions of a place.</li>
+            
+           <li> Parent Rock - The nature of the soil that is its texture and availability of minerals depends upon the rock from which it is formed. This rock is often called as the Parent Rock.</li>
+       
+           
+        
+<div class="image-container">
+    <img src="2018121-155522432-3320-importance-of-soil.png" alt="Description of the image">
+</div>
+Figure 3: Soil Profile
+           <div class="container">
+            <h1>Soil Information</h1>
+            <div class="highlight">
+                <h2>Components of Soil:</h2>
+                <ul class="info-list">
+                    <li><strong>Mineral Particles:</strong> <li>Sand(largest particles)
+                    </li> <li>silt(medium-sized particles)</li> clay (smallest particles)
+                </li>
+                    <li><strong>Organic Matter:</strong><li>Provides nutrients, improves soil structure, and retains moisture
+                    </li> Decomposed plant and animal materials</li>
+                    <li><strong>Water:</strong><li> Essential for plant growth</li>
+                <li>Varies in availability depending on soil texture and structure</li></li>
+                    <li><strong>Air:</strong><li>Helps in maintaining soil structure and promoting microbial activity
+                    </li> Required for respiration of plant roots</li>
+                </ul>
+            </div>
+            <div class="highlight">
+                <h2>Soil pH:</h2>
+                <p>Soil pH is a measure of acidity or alkalinity on a scale of 0 to 14.</p>
+                <p>Optimal pH for most plants is between 6.0 to 7.5.</p>
+              <p>Optimal pH levels vary for different plants, but generally, most plants prefer slightly acidic to neutral soil (pH 6.0 to 7.5).
+            </p> 
+            <p>pH influences nutrient availability; certain nutrients become more or less available at different pH levels.
+            </p>
+            </div>
+            <div class="highlight">
+                <h2>Types of Soil:</b></h2>
+                <div class="image-container">
+                    <img src="2018121-155628475-9567-soils-have-different-colors.png" alt="Description of the image">
+                </div>
+                <p>Soil types are classified based on their composition and texture:         </p>
+                <li>Sandy, silty, clay, loamy</li>
+                <h2>Sandy Soil</h2>
+                <p>Large particles, drains quickly, low fertility, poor water and nutrient retention
+                </p>
+                <p>Suitable for crops that prefer well-draining soil like carrots, radishes, and potatoes
+                </p>
+
+<h2>Silty Soil</h2>
+<p>Medium-sized particles, retains moisture well, fertile
+</p>
+<p>Suitable for a wide range of crops including wheat, barley, and spinach
+</p>
+<p>They are generally found near the water bodies like river banks and lakes.</p>
+<p>They are rich in nutrients, highly fertile and hence are suitable for agriculture.</p>
+<p>They are often mixed with other soils to improve the fertility of the soil. </p>
+<h2>Clay Soil</h2>
+<p>Small particles, retains water and nutrients but poorly drained, heavy and compact
+</p>
+<p>Suitable for water-loving crops like rice and certain vegetables such as cabbage and broccoli
+</p>
+<h2>Loamy Soil</h2>
+<p>Ideal soil type, balanced mixture of sand, silt, and clay
+</p>
+<p>They are combination of sandy, clayey and silty soil.</p>
+<p>They contain good amounts of calcium and have a high pH level.</p>
+<p>They are also called Agricultural Soils because of their fertility and appropriate texture.</p>
+<p>Retains moisture well while allowing for good drainage, highly fertile
+</p>
+<p>Suitable for a wide variety of crops including corn, tomatoes, and beans
+</p>
+            </div>
+            <section class="image-container">
+                <img src="i.jpg" alt="Image 1 Description">
+            </section>
+            <section class="image-container">
+                <img src="il.jpg" alt="Image 2 Description">
+            </section>
+        
+            <section class="image-container">
+                <img src="io.jpg" alt="Image 3 Description">
+            </section>
+        
+            <div class="highlight">
+                <h2>Soil Nutrients:</h2>
+                <p>Plants require various nutrients for their growth and development. These nutrients can be categorized into two main groups:</p>
+                <li>Macronutrients:</i></li>
+                <p>Essential for plant growth, development, and overall health
+                </p>
+                <p> Nitrogen (N), Phosphorus (P), Potassium (K)</p>
+                <li>Micronutrients:</i></li>
+                <p> Iron (Fe), Zinc (Zn), Magnesium (Mg), etc.</p>
+                <p>Required in smaller quantities but equally important for plant growth and function
+                </p>
+            </div>
+            <div class="highlight">
+                <h2>Relevant Crops for Different Types of Soil:</h2>
+                <p>Different crops thrive in different soil types due to their specific requirements for water, nutrients, and soil structure. Here are some examples:
+
+                </p>
+<h2>Sandy Soil</h2>
+<li>Carrot</li>
+<li>Radishes</li>
+<li>Potatoes</li>
+<li>Peppers</li>
+<li>Tomatoes</li>
+
+<h2>Silty Soil</h2>
+<li>Wheat</li>
+<li>Barley</li>
+<li>Oats</li>
+<li>Spinach</li>
+<li>Lattuce</li>
+
+<h2>Clay Soil</h2>
+<li>Cabbage</li>
+<li>Peas</li>
+<li>Rice</li>
+<li>Cauliflower</li>
+
+<li>Broccoil</li>
+<h2>Loamy Soil</h2>
+<li>Corn</li>
+<li>Beans</li>
+<li>Tomatoes</li>
+<li>Squash</li>
+<li>Strawbaries</li>
+
+            </div>
+        </div>
+        <h2>Soil Colour</h2>
+        <p>Different soils have different colours as well. This is because of the minerals and nutrients present in the soil. For instance, some soils are black in colour because of the presence of humus and minerals while some soils are red in colour because they have iron in large quantities in them.</p>
+       <h2>Soil and Crops</h2>
+       <p>Different kinds of soils are found in different regions because of the following factors that decide the soil structure of that place:
+
+       <li> temperature</li>
+        
+       <li>humidity</li> 
+        
+       <li> rainfall</li>
+        
+       <li>sunlight</li> 
+        
+        <li>winds</li>
+        
+        The type of crops that will grow in the soil depends upon these factors as well as the properties of a soil.
+        
+        </p>
+        <div class="container">
+            <h1>SOIL PROPERTIES</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Property</th>
+                        <th>Sand</th>
+                        <th>Silt</th>
+                        <th>Clay</th>
+                        <th>Loam</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Water Holding Capacity</td>
+                        <td>Low</td>
+                        <td>Medium to High</td>
+                        <td>High</td>
+                        <td>High</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Drainage Rate</td>
+                        <td>High</td>
+                        <td>Low to Medium</td>
+                        <td>Very low</td>
+                        <td>Very Low</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Cohesion Between Particles</td>
+                        <td>Very Low</td>
+                        <td>Medium to High</td>
+                        <td>Very High</td>
+                        <td>Very High</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Organic Material Content</td>
+                        <td>Low</td>
+                        <td>Medium to High</td>
+                        <td>Medium to High</td>
+                        <td>High</td>
+                    </tr>
+                </tbody>
+                <tbody>
+                    <tr>
+                        <td>Shrink & Swell Potential</td>
+                        <td>Low</td>
+                        <td>Medium to High</td>
+                        <td>High</td>
+                        <td>High</td>
+                    </tr>
+                </tbody>
+
+            </table>
+            <caption>Different Properties of Soils</caption>
+        </div>
+        <h2>Conclusion:</h2> 
+        <p> Understanding soil components, pH, types, nutrients, and suitable crops is crucial for successful agriculture. By knowing the characteristics of different soils and their interactions with plants, farmers can optimize crop production and maintain soil health for sustainable agriculture practices.
+            
+            
+            
+            </p>
+          
+        <div id="crop-guide">
+            <h1>Crop Planting Guide</h1>
+    
+            <div class="section">
+                <h2>Neutral pH (around 6.0 - 7.0)</h2>
+                <p class="soil-type">Loam Soil</p>
+                <ul>
+                    <li>Beans</li>
+                    <li>Peas</li>
+                    <li>Carrots</li>
+                    <li>Beets</li>
+                    <li>Lettuce</li>
+                    <li>Corn</li>
+                    <li>tomatoes,</li>
+                    <li>strawberries</li>
+                    <li>Spinach</li>
+                </ul>
+                <p class="weather-details">Moderate temperatures, well-distributed rainfall</p>
+            </div>
+    
+            <div class="section">
+                <h2>Slightly Acidic to Neutral pH (around 5.8 - 6.5)</h2>
+                <p class="soil-type">Loam Soil</p>
+                <ul>
+                    <li>Tomatoes</li>
+                    <li>Cabbage</li>
+                    <li>Cauliflower</li>
+                    <li>Broccoli</li>
+                    <li>Brussels Sprouts</li>
+                </ul>
+                <p class="weather-details">Moderate temperatures, adequate sunlight, regular rainfall</p>
+            </div>
+    
+            <div class="section">
+                <h2>Slightly Acidic pH (around 5.5 - 6.5)</h2>
+               
+                <ul>
+                    <li>Potatoes</li>
+                   
+                </ul>
+                <p class="weather-details">Cooler temperatures, adequate sunlight, Moderate rainfall</p>
+            </div>
+            <div class="section">
+                <h2>Slightly Acidic to Neutral pH (around 6.0 - 7.0)</h2>
+                <p class="soil-type">Loam Soil</p>
+                <ul>
+                    <li>Cucumbers</li>
+                    <li>Squash</li>
+                    <li>Pumpkins</li>
+                    <li>Melons</li>
+                
+                </ul>
+                <p class="weather-details">Warm temperatures, plenty of sunlight, Adequate rainfall</p>
+            </div>
+            <div class="section">
+                <h2>Neutral to slightly Alkaline (around 6.0 - 7.5)</h2>
+                <p class="soil-type">Loam Soil</p>
+                <ul>
+                    <li>Peppers</li>
+                   
+                </ul>
+                <p class="weather-details">Warm temperatures, adequate sunlight, Regular rainfall</p>
+            </div>
+    
+            <div class="section">
+                <h2>Slightly Acidic to Acidic pH (around 5.0 - 6.5)</h2>
+                <p class="soil-type">Loam Soil</p>
+                <ul>
+                    <li>Strawberries</li>
+
+                </ul>
+                <p class="weather-details">Cooler temperatures, adequate sunlight, Regular rainfall</p>
+            </div>
+    
+        </div>
+    
+       
+    </section>
+
+    <section id="weather-content" style="display: none;">
+        <h2>Weather Data</h2>
+        <p>Agriculture weather is critical for securing the yield of most field crops. However, farmers and landowners who rely on publicly available agriculture weather data often find that the forecasts made by these sources don’t match up with what they see in their fields. This disparity might result in heavy losses, especially when severe weather strikes unexpectedly. Therefore, growers should only use agriculture weather forecasts that have been carefully compiled, specifically for their fields, using data from meteo stations, sensors, and satellites.</p>
+   <h2>Concept And Importance Of Weather In Agriculture
+</h2>
+<section class="image-container">
+    <img src="sudden-rainfall.jpg.webp" alt="Image 1 Description">
+</section>
+
+<section class="image-container">
+    <img src="w.jpg" alt="Image 2 Description">
+</section>
+
+<section class="image-container">
+    <img src="we.jpg" alt="Image 3 Description">
+</section>
+
+<p> click<a href="weather_data.html">here</a>for more</p>
+
+<p>When we remark on the crucial role of weather in agriculture, we are not exaggerating; in fact, we may be understating its significance. If you want to maximize your agricultural output and <u>increase crop yields</u> , you must work in conjunction with the meteo conditions.
+
+    Weather has a significant impact on the prevalence of pests and diseases, the availability of water, and the amount of fertilizer needed to grow crops. Farmers rely on climate patterns and weather forecasting in agriculture to determine which crops to cultivate and when to sow them. The majority of farming techniques depend on favorable meteorological conditions. As an illustration, precision irrigation relies on the amount of rain that falls on a field, <u>soil solarization</u> requires high temperatures, etc.</p>
+ <h2><i>What is the relationship between weather, climate, and agriculture?</i></h2>
+    <p><i><u>Climate change and agriculture</u> are intertwined in crucial ways. If temperatures rise, farmers may be able to reap the benefits of growing crops suited to their climate or move to growing crops more suited to warmer regions. If the increased temperature is higher than optimal for a given crop, however, agriculture production will suffer. In general, it may become more challenging to cultivate crops in the same manner and locations as a result of climate change .</i></p>
+<p>Farmers most frequently use short-range forecasts, which are predictions made between 1 and 7 days in advance. In the meantime, medium-range (up to a month), long-range (up to a year), and hazardous weather forecasts for agriculture can all be extremely helpful in field activity planning. Even though severe weather can come abruptly, wreaking havoc on crops and even impacting the viability of seeds in storage, local meteorological forecasts help farmers prepare for these events, minimizing or even eliminating their harmful effects.</p>
+<h2>How Does Weather Affect Agriculture?</h2>
+<p>Most crops grown in fields rely entirely on rain and sunshine for their survival. Meteo conditions also affect the well-being and food availability of livestock.
+
+    Agriculture losses from severe weather can be devastating. High temperatures, low rainfall, flooding, and sudden freezes negatively affect crops, particularly during the most vulnerable<u>stages of plant growth,</u>  such as seed germination. Studies have shown that drought is typically a major reason for decreased grain yields and economic losses on farms .
+    
+    Indirect effects of weather on agriculture crops include shifts in soil processes, dynamics of nitrogen uptake, and the spread of pest populations.<u>Soil erosion nutrient deficiency</u>  and  due to heavy rain and the opposite phenomenon,<u>soil salinization</u>  during the dry spell, are all examples of the indirect impact of weather on agriculture.
+    
+    With all of the potential direct and indirect effects of meteo conditions, agriculture producers should plan ahead of time and count on accurate and dependable data.</p>
+<h2>Why Is Public Weather Station Data Insufficient For Agricultural Needs?</h2>
+<p>Given the significance of agricultural weather forecast accuracy, it’s easy to see why companies and organizations in this sector are so eager to acquire the best available information. With multiple open-access public sources, it may seem that they might just pick one to obtain their desired agricultural meteorological reports. However, big players in the agriculture industry prefer reliable agricultural weather stations and data providers for one main reason: accurate data helps them increase profits while spending less.
+
+    Generally, meteorological stations covering a certain territory around them are the source of global weather data for agriculture monitoring, and the bigger the distance, the less accurate the forecast is. Typical forecasting models allow for prognoses based on specific conditions and their combinations. However, such suggestions are far from precise and cannot always assist in making the right decisions or insuring risks in agriculture.
+    
+    Say, for instance, that a certain field’s crops don’t receive adequate moisture despite the fact that rain is forecast for the area. This is an example of why public weather data is insufficient for agriculture.
+    
+    </p>
+
+</section>
+
+    <section id="crop-content" style="display: none;">
+        <h2>Crop Recommendations</h2>
+        <p id="crop-recommendation-message"></p>
+        <h2>Crop Recommendation Form</h2>
+
+        <form action="process_form.php" method="post" onsubmit="return validateForm()">
+            <label for="name">Location:</label>
+            <input type="text" id="name" name="location"><br>
+        
+            <label for="soilType">Soil Type:</label>
+            <input type="text" id="soilType" name="soilType"><br>
+        
+            <label for="soilPhMin">Soil pH (Min):</label>
+            <input type="text" id="soilPhMin" name="soilPhMin"><br>
+        
+            <label for="soilPhMax">Soil pH (Max):</label>
+            <input type="text" id="soilPhMax" name="soilPhMax"><br>
+        
+            <label for="tempMin">Temperature (Min):</label>
+            <input type="text" id="tempMin" name="tempMin"><br>
+        
+            <label for="tempMax">Temperature (Max):</label>
+            <input type="text" id="tempMax" name="tempMax"><br>
+        
+            <label for="rainfallMin">Rainfall (Min):</label>
+            <input type="text" id="rainfallMin" name="rainfallMin"><br>
+        
+            <label for="rainfallMax">Rainfall (Max):</label>
+            <input type="text" id="rainfallMax" name="rainfallMax"><br>
+        
+            <input type="submit" value="Submit">
+        </form>
+        
+    
+       
+    </section>
+
+
+
+    <section id="notification" style="display: none;">
+        <h2>Notification</h2>
+        <p id="notification-message"></p>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

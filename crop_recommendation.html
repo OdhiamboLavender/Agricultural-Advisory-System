@@ -1,0 +1,333 @@
+<?php
+
+// Start session (optional, can be placed elsewhere)
+session_start();
+
+// Check if user is logged in
+$isLoggedIn = isset($_SESSION['username']);
+
+// Restrict access if not logged in
+if (!$isLoggedIn) {
+  header("Location: login.html");
+  exit;
+}
+
+// ... rest of the code for your crop recommendation page content
+// accessible only to logged-in users
+
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendation Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .navbar {
+      background-color: #12ea24;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      width: 100%; /* Make the navbar full width */
+      /* Move the navbar to the top with flexbox */
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 100; /* Ensure the navbar stays on top */
+    }
+
+    .navbar a {
+      float: left; /* Align links horizontally */
+      padding: 12px;
+      text-decoration: none;
+      font-size: 16px;
+      color: black;
+    }
+
+    .navbar a:hover {
+      background-color: hsl(245, 90%, 47%); /* Add hover effect */
+      color: #000; /* Change text color on hover */
+    }
+
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: calc(100% - 10px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            background-color: #007bff;
+            color: #f4f4f4;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .feedback-message {
+        margin: 16px 0;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .success-message {
+        background-color: #d4edda;
+        border-color: #c3e6cb;
+        color: #155724;
+    }
+    .error-message {
+        background-color: #f8d7da;
+        border-color: #f5c6cb;
+        color: #721c24;
+    }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+       
+        <a href="#" onclick="showContent('main-content')">Home</a>
+        <a href="soil_data.html" onclick="showContent('soil-content')">Soil Data</a>
+        <a href="weather_data.html" onclick="showContent('weather-content')">Weather Data</a>
+        <a href="crop_recommendation.html" onclick="showContent('crop-content')">Crop Recommendations</a>
+        <a href="login.html" id="get-started-link" onclick="showContent('Log_in')">Log in</a>
+    </nav>
+   
+    <form id="cropForm" action="process_form.php" method="post">
+        <h2>Crop Recommendation Form</h2>
+        <label for="location">Location:</label>
+        <input type="text" id="location" name="location" required><br>
+
+        <label for="rainfall">Average Annual Rainfall (in mm):</label>
+        <input type="number" id="rainfall" name="rainfall" min="0" required><br>
+
+        <label for="soil_type">Soil Type:</label>
+        <select id="soil_type" name="soil_type" required>
+            <option value="">Select Soil Type</option>
+            <option value="Sandy">Sandy</option>
+            <option value="Silty">Silty</option>
+            <option value="Alluvial">Alluvial</option>
+            <option value="Clay">Clay</option>
+            <option value="Loam">Loam</option>
+        </select><br>
+
+        <label for="temperature">Average Annual Temperature (°C):</label>
+        <input type="number" id="temperature" name="temperature" min="o" max="50" required><br>
+
+        <label for="soil_ph">Soil pH:</label>
+        <input type="number" id="soil_ph" name="soil_ph" step="0.1" min="0" max="14" required><br>
+
+        <label for="county">County:</label>
+        <input type="text" id="county" name="county" required><br>
+
+                <label for="sublocation">Sublocation:</label>
+        <input type="text" id="sublocation" name="sublocation"><br>
+
+        <input type="submit" value="Recommend Crop">
+    </form>
+   
+    <div id="feedbackMessage" class="feedback-message"></div>
+    <script>
+     // Event listener for form submission
+document.getElementById("cropForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the form from submitting
+
+    // Get form values
+    var location = document.getElementById("location").value;
+    var rainfall = parseFloat(document.getElementById("rainfall").value);
+    var soilType = document.getElementById("soil_type").value;
+    var temperature = parseFloat(document.getElementById("temperature").value);
+    var soilPh = parseFloat(document.getElementById("soil_ph").value);
+    var county = document.getElementById("county").value;
+    var sublocation = document.getElementById("sublocation").value;
+
+    // Call recommendCrop function and display recommendation
+    var recommendedCrop = recommendCrop(location, rainfall, soilType, temperature, soilPh);
+
+    // Redirect to the result page with the recommended crop as a query parameter
+    window.location.href = "result.html?crop=" + encodeURIComponent(recommendedCrop);
+});
+
+       // JavaScript function recommendCrop() defined here
+       function recommendCrop(location, rainfall, soilType, temperature, soilPh) {
+            // Add logic here to recommend crops based on the input parameters
+            // This is just a placeholder function; you need to customize it based on your criteria
+            // For example:
+            if (soilType === 'Sandy') {
+                if(isWithinRange (soilPh ,6.0, 7.0) &&isWithinRange( temperature,15,25) && isWithinRange( rainfall , 50 , 100)) {
+                    return 'Carrots';
+                } else if (isWithinRange(soilPh ,5.0 ,7.0) &&isWithinRange( temperature ,18 ,32) && isWithinRange(rainfall ,50 , 100)) {
+                    return 'Maize';
+                } else if (isWithinRange(soilPh >= 5.8 && soilPh <= 6.5 )&& isWithinRange(temperature >= 15 && temperature <= 25) &&isWithinRange( rainfall >= 25 && rainfall <= 50)) {
+                    return 'Cabbage';
+                } else if (soilPh >= 5.5 && soilPh <= 6.5 && temperature>=15&&temperature <= 20 && rainfall >= 50 && rainfall <= 100) {
+                    return 'Potatoes';
+                } else if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 21 && temperature <= 29 && rainfall >= 25 && rainfall <= 50) {
+                    return 'Peppers';
+                } else if (soilPh >= 5.8 && soilPh <= 6.5 && temperature >= 21 && temperature <= 27 && rainfall >= 50 && rainfall <= 75) {
+                    return 'Tomatoes';
+                } 
+                return [ 'Carrots','cucumbers'];
+            } else if (soilType === 'Silty') {
+                // Add conditions for Silty soil type
+                if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 15 && temperature <= 25 && rainfall >= 350 && rainfall <= 450) {
+                    return 'Wheat';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 15 && temperature <= 20 && rainfall >= 300 && rainfall <= 500) {
+                    return 'Oats';
+                } else if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 15 && temperature <= 25 && rainfall >= 400 && rainfall <= 600) {
+                    return 'Barley';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature>= 15 && temperature <= 20 && rainfall >= 500 && rainfall <= 750) {
+                    return 'Spinach';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 15 && temperature <= 20 && rainfall >= 500 && rainfall <= 750) {
+                    return 'Lattuce';
+                }
+                return ['Wheat','Spinach'];
+            } else if (soilType === 'Alluvial') {
+                // Add conditions for Alluvial soil type
+                if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 15 && temperature <= 24  && rainfall >= 15 && rainfall <= 25 ) {
+                    return 'Wheat';
+                } else if (soilPh >= 5.5 && soilPh <= 7.0 && temperature >= 20 && temperature <= 30 && rainfall >= 1000 && rainfall <= 2500 ) {
+                    return 'Sugarcane';
+                } else if (soilPh >= 5.5 && soilPh <= 7.0 && temperature >= 20 && temperature <= 30 && rainfall >= 500 && rainfall <= 1000 ) {
+                    return 'Cotton';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature>= 20 && temperature <= 30 && rainfall >= 500 && rainfall <= 1000 ) {
+                    return 'Soybeans';
+                } else if (soilPh >= 5.0 && soilPh <= 7.0 && temperature >= 20 && temperature <= 35 && rainfall >= 1000 && rainfall <= 2500 ) {
+                    return 'Rice';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 15 && temperature <= 25 && rainfall >= 450 && rainfall <= 750 ) {
+                    return 'Carrot';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 15 && temperature <= 25 && rainfall >= 450 && rainfall <= 750 ) {
+                    return 'Radishes';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 15 && temperature <= 25 && rainfall >= 450 &&rainfall <= 750 ) {
+                    return 'Spinach';
+                } else if (soilPh >= 5.0 && soilPh <= 7.0 && temperature >= 18 && temperature <= 32 && rainfall >= 450 && rainfall <= 750 ) {
+                    return 'Maize';
+                }
+                return ['Maize','Cotton'];
+            } else if (soilType === 'Clay') {
+                // Add conditions for Clay soil type
+                if (soilPh >= 5.8 && soilPh <= 6.5 && temperature >= 15 && temperature <= 20 && rainfall>= 500 && rainfall <= 800 ) {
+                    return 'Cabbage';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 13 && temperature <= 18 && rainfall>= 25 && rainfall <= 50 ) {
+                    return 'Peas';
+                } else if (soilPh >= 5.8 && soilPh <= 6.5 && temperature >= 18 && temperature <= 24 && rainfall >= 25 && rainfall <= 50 ) {
+                    return 'Broccoil';
+                } else if (soilPh >= 5.8 && soilPh <= 6.5 && temperature>= 18 && temperature <= 24 && rainfall >= 15 && rainfall <= 24 ) {
+                    return 'Cauliflower';
+                } else if (soilPh >= 5.8 && soilPh <= 6.5 && temperature >= 15 && temperature <= 20 && rainfall >= 25 && rainfall<= 50 ) {
+                    return 'Lattuce';
+                }
+                return ['Lattuce','Cabbage','kale','Broccoil','Clover'];
+            } else if (soilType === 'Loam') {
+                // Add conditions for Loam soil type
+                if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 18 && temperature <= 32 && rainfall >= 75 && rainfall <= 125 ) {
+                    return 'Beans';
+                } else if (soilPh >= 5.8 && soilPh <= 6.5 && temperature >= 18 && temperature <= 24 && rainfall >= 50 && rainfall <= 75 ) {
+                    return 'Tomatoes';
+                } else if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 21 && temperature <= 32 && rainfall >= 75 && rainfall <= 100 ) {
+                    return 'Squash';
+                } else if (soilPh >= 5.0 && soilPh <= 6.5 && temperature>= 21 && temperature <= 27 && rainfall >=  50 && rainfall <= 100 ) {
+                    return 'Strawberies';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 10 && temperature <= 20 && rainfall >= 50 && rainfall <= 100 ) {
+                    return 'Beets';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 21 && temperature <= 32 && rainfall >= 75 && rainfall <= 125 ) {
+                    return 'Cucumbers';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 18 && temperature <= 24 && rainfall >= 75 && rainfall<= 125 ) {
+                    return 'Pampkin';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 21 && temperature <= 32 && rainfall >= 75 && rainfall <= 127 ) {
+                    return 'Melon';
+                } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 18 && temperature <= 32 && rainfall >= 75 && rainfall <= 125 ) {
+                    return 'Maize';
+                }
+                return ['Beans','Maize'];
+            }else if (soilType === 'Sandy' && soilPH >= 5.0 && soilPH <= 7.0 && rainfall >= 450 && rainfall <= 700 && temperature >= 18 && temperature <= 32  ) {
+                return 'Maize (Corn)';
+             } else if (soilType === 'Silty' && soilPH >= 6.0 && soilPH <= 7.0 && rainfall >= 400 && rainfall <= 600 && temperature >= 15 && temperature <= 24 ) {
+                return 'Wheat';
+             } else if (soilType === 'Alluvial' && soilPH >= 5.0 && soilPH <= 7.0 && rainfall >= 1000 && rainfall <= 2500 && temperature >= 20 && temperature <= 35 ) {
+                return 'Rice';
+             } else if (soilType === 'Alluvial' && soilPH >= 6.0 && soilPH <= 7.5 && rainfall >= 500 && rainfall <= 1000 && temperature >= 20 && temperature <= 30 ) {
+                return 'Soybeans';
+             } else if (soilType === 'Sandy' && soilPH >= 5.5 && soilPH <= 6.5 && rainfall >= 50 && rainfall <= 100 && temperature >= 15 && temperature <= 20 ) {
+                return 'Potatoes';
+             } else if (soilType === 'Silty' && soilPH >= 6.0 && soilPH <= 7.5 && rainfall >= 400 && rainfall <= 600 && temperature >= 15 && temperature <= 25 ) {
+                return 'Barley';
+             } else if (soilType === 'Loam' && soilPH >= 5.5 && soilPH <= 7.5 && rainfall >= 75 && rainfall <= 125 && temperature >= 18 && temperature <= 32 ) {
+                return 'Sorghum';
+             } else if (soilType === 'Loam' && soilPH >= 6.0 && soilPH <= 7.5 && rainfall >= 100 && rainfall <= 300 && temperature >= 18 && temperature <= 32 ) {
+                return 'Sunflower';
+             } else if (soilType === 'Alluvial' && soilPH >= 5.5 && soilPH <= 7.0 && rainfall >= 500 && rainfall <= 1000 && temperature >= 18 && temperature <= 32 ) {
+                return 'Cotton';
+             } else if (soilType === 'Alluvial' && soilPH >= 5.5 && soilPH <= 7.0 && rainfall >= 1000 && rainfall <= 2500 && temperature >= 18 && temperature <= 32 ) {
+                return 'Sugarcane';
+             } else if (soilType === 'Sandy' && soilPH >= 5.0 && soilPH <= 7.0 && rainfall >= 200 && rainfall <= 400 && temperature >= 18 && temperature <= 32 ) {
+                return 'Millet';
+             } else if (soilType === 'Silty' && soilPH >= 6.0 && soilPH <= 7.0 && rainfall >= 400 && rainfall <= 600 && temperature >= 15 && temperature <= 20 ) {
+                return 'Oats';
+             } else if (soilType === 'Loam' && soilPH >= 5.0 && soilPH <= 7.0 && rainfall >= 75 && rainfall <= 150 && temperature >= 13 && temperature <= 20 ) {
+                return 'Rye';
+             } else if (soilType === 'Alluvial' && soilPH >= 5.0 && soilPH <= 6.5 && rainfall >= 1000 && rainfall <= 1500 && temperature >= 20 && temperature <= 32 ) {
+                return 'Cassava';
+             } else if (soilType === 'Sandy' && soilPH >= 5.5 && soilPH <= 6.5 && rainfall >= 300 && rainfall <= 800 && temperature >= 18 && temperature <= 32 ) {
+                return 'Lentils';
+             } else if (soilType === 'Sandy' && soilPH >= 6.0 && soilPH <= 7.0 && rainfall >= 200 && rainfall <= 600 && temperature >= 14 && temperature <= 25 ) {
+                return 'Peanuts (Groundnuts)';
+             } else if (soilType === 'Loam' && soilPH >= 6.0 && soilPH <= 7.5 && rainfall >= 100 && rainfall <= 200 && temperature >= 15 && temperature <= 25 ) {
+                return 'Quinoa';
+             } else if (soilType === 'Clay' && soilPH >= 5.8 && soilPH <= 6.5 && rainfall >= 500 && rainfall <= 750 && temperature >= 18 && temperature <= 24 ) {
+                return 'Radish';
+             } else if (soilType === 'Loam' && soilPH >= 5.8 && soilPH <= 7.5 && rainfall >= 100 && rainfall <= 300 && temperature >= 15 && temperature <= 25 ) {
+                return 'Sesame';
+             } else if (soilType === 'Silty' && soilPH >= 6.0 && soilPH <= 7.0 && rainfall >= 400 && rainfall <= 600 && temperature >= 15 && temperature <= 25 ) {
+                return 'Soybeans';
+             } else if (soilType === 'Sandy' && soilPH >= 5.5 && soilPH <= 6.5 && rainfall >= 200 && rainfall <= 500 && temperature >= 18 && temperature <= 32 ) {
+                return 'Teff';
+             } else if (soilType === 'Loam' && soilPH >= 6.0 && soilPH <= 7.5 && rainfall >= 50 && rainfall <= 150 && temperature >= 18 && temperature <= 32 ) {
+                return 'Triticale';
+             } else if (soilType === 'Silty' && soilPH >= 6.0 && soilPH <= 7.0 && rainfall >= 350 && rainfall <= 450 && temperature >= 15 && temperature <= 25 ) {
+                return 'Wheat';
+             } else {
+                return ['No recommendation available'];
+             }
+        }
+    
+
+    </script>
+</body>
+</html>

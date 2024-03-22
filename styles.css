@@ -1,0 +1,509 @@
+/* Carousel styling */
+#home-carousel .carousel-indicators li {
+    background-color: #ddd;
+    border-radius: 50%;
+  }
+  
+  #home-carousel .carousel-indicators .active {
+    background-color: #007bff;
+  }
+  
+  #home-carousel .carousel-slide {
+    height: 400px;
+    background-position: center center;
+    background-size: cover;
+  }
+  
+  #home-carousel .carousel-caption {
+    bottom: 30px;
+    left: 15%;
+    right: 15%;
+    padding: 20px;
+    color: white;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Main content styling */
+  #main-content {
+    padding: 20px;
+    margin-top: 20px; /* Added margin-top for spacing */
+  }
+  
+  #main-content h2 {
+    margin-bottom: 15px;
+  }
+  
+  #main-content p {
+    line-height: 1.5;
+  }
+  
+  #main-content .image-container {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  /* Choose one of the following methods to adjust image size: */
+  
+  /* Method 1: Using width and height (may distort the image) */
+  #main-content .image-container img {
+    width: 600px;
+    height: 400px;
+  }
+  
+  /* Method 2: Using max-width and max-height (maintains aspect ratio) */
+  #main-content .image-container img {
+    max-width: 80%; /* Adjust percentage as needed */
+    max-height: 300px; /* Adjust height as needed (optional) */
+  }
+  
+  /* Method 3: Using object-fit (more control over scaling) */
+  #main-content .image-container img {
+    object-fit: cover; /* adjust value as needed (cover, contain, fill) */
+    /* Optional: Set a maximum width/height to prevent excessive stretching */
+    max-width: 80%;
+  }
+  
+  /* Adjust these styles as needed for your specific layout and design */
+  
+  /* Adjust these styles as needed for your specific layout and design */
+  
+/* Reset some default styles and provide basic styling */
+body, h1, h2, p {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Style the navigation bar */
+.navbar {
+    background-color: #5b0dec;
+    overflow: hidden;
+}
+
+.navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}
+
+section {
+    margin: 1em;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px;
+    margin: auto;
+}
+
+label {
+    margin-bottom: 0.5em;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 0.5em;
+    cursor: pointer;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+form {
+    max-width: 400px;
+    margin: 20px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+select, input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
+}
+
+#crop-guide {
+    max-width: 800px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section {
+    margin-bottom: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+ul {
+    list-style-type:
+    margin
+    padding 
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+.soil-type {
+    font-style: italic;
+    color: #190be4;
+}
+
+.weather-details {
+    color: #eb830c;
+}
+/* styles.css */
+
+/* Optionally, you can add custom styles for the carousel and adjust its appearance */
+
+/* Center the carousel vertically and horizontally */
+#home-carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 70vh; /* Adjust the height as needed */
+}
+
+/* Customize the appearance of carousel indicators (dots) */
+.carousel-indicators li {
+    background-color: #007bff; /* Change the color of active indicator */
+    border-color: #007bff; /* Change the border color of all indicators */
+}
+
+/* Customize the appearance of carousel controls (arrows) */
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: #007bff; /* Change the color of the arrow icons */
+}
+
+.carousel-control-prev, .carousel-control-next {
+    width: 45%; /* Adjust the size of the arrows */
+}
+
+/* Optionally, add more styles for the carousel items if needed */
+.carousel-item img {
+    max-height: 400px; /* Adjust the maximum height of carousel images */
+    width: 100%;
+    object-fit: cover; /* Ensure images cover the entire carousel area */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+h2 {
+    color: #555;
+}
+p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+.highlight {
+    background-color: #f0f8ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+.info-list {
+    list-style: none;
+    padding: 0;
+}
+.info-list li {
+    margin-bottom: 10px;
+}
+.info-list li strong {
+    color: #333;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    background-color: #e4dddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td {
+    border: 1px solid #db1414;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #d6cec4;
+}
+
+caption {
+    margin-top: 10px;
+    font-style: italic;
+    text-align: center;
+}
+/* styles.css */
+
+/* Center the images horizontally and vertically */
+.image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Adjust the height as needed */
+    margin-bottom: 20px; /* Add margin between images */
+}
+
+/* Set the maximum dimensions for the images */
+img {
+    max-width: 507px;
+    max-height: 373px; /* Set the maximum height based on the tallest image */
+    width: auto;
+    height: auto;
+}
+img {
+    max-width: 535px;
+    max-height: 452px; /* Set the maximum height based on the tallest image */
+    width: auto;
+    height: auto;
+}
+/* CSS code for image styling */
+.image-container {
+    width: 100%; /* Set container width */
+    max-width: 600px; /* Set maximum width for the image */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+img {
+    width: 100%; /* Make the image responsive */
+    display: block; /* Remove default inline display */
+    max-width: 100%; /* Ensure image does not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+}
+/* CSS code for image styling */
+.image-container {
+    width: 100%; /* Set container width */
+    max-width: 600px; /* Set maximum width for the image */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+img {
+    width: 100%; /* Make the image responsive */
+    display: block; /* Remove default inline display */
+    max-width: 100%; /* Ensure image does not exceed container width */
+    height: auto; /* Maintain aspect ratio */
+}
+/* CSS code for form styling */
+.form-container {
+    width: 80%; /* Set container width */
+    max-width: 600px; /* Set maximum width for the form */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding for spacing */
+    border: 1px solid #ccc; /* Add border for visual separation */
+    border-radius: 5px; /* Add border radius for rounded corners */
+}
+
+h2 {
+    text-align: center; /* Center the heading */
+}
+
+label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 8px; /* Add spacing between labels */
+}
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%; /* Set input fields and select dropdown to full width */
+    padding: 8px; /* Add padding for input fields */
+    margin-bottom: 16px; /* Add spacing between input fields */
+    border: 1px solid #ccc; /* Add border for input fields */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    box-sizing: border-box; /* Ensure padding and border are included in the width */
+}
+
+button {
+    width: 100%; /* Set button to full width */
+    padding: 10px; /* Add padding for button */
+    background-color: #007bff; /* Set button background color */
+    color: #fff; /* Set button text color */
+    border: none; /* Remove button border */
+    border-radius: 4px; /* Add border radius for rounded corners */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Change button background color on hover */
+}
+
+#feedback {
+    margin-top: 20px; /* Add space above feedback section */
+}
+body {
+    font-family: sans-serif;
+  }
+  
+  #login-form {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  a {
+    color: #4CAF50;
+    text-decoration: none;
+  }
+  body {
+    font-family: sans-serif;
+  }
+  
+  #signup-form {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  h2 {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 15px;
+  }
+  
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  #error-message {
+    color: red;
+  }
+

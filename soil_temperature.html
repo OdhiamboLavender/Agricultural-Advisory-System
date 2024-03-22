@@ -1,0 +1,147 @@
+// JavaScript function recommendCrop() defined here
+function recommendCrop(location, rainfall, soilType, temperature, soilPh) {
+    let recommendations = [];
+    // Add logic here to recommend crops based on the input parameters
+    // This is just a placeholder function; you need to customize it based on your criteria
+    // For example:
+    if (soilType === 'Sandy') {
+        if (isWithinRange(soilPh, 6.0, 7.0) && temperature >= 15 && temperature <= 25 && rainfall >= 50 && rainfall <= 100) {
+recommendations.push['Carrots'] ;
+} else if (isWithinRange(soilPh, 5.0, 7.0) && temperature >= 15 && temperature <= 25 && rainfall >= 50 && rainfall <= 100) {
+recommendations.push['Maize'];
+} else if (isWithinRange(soilPh, 5.8, 6.5) && temperature >= 15 && temperature <= 25 && rainfall >= 50 && rainfall <= 100) {
+recommendations.push ['Cabbage'];
+} else if (isWithinRange(soilPh, 5.5, 6.5) && temperature >= 15 && temperature <= 25 && rainfall >= 50 && rainfall <= 100) {
+recommendations.push  ['Potatoes'];
+} else if (isWithinRange(soilPh, 6.0, 7.5) && temperature >= 15 && temperature <= 25 && rainfall >= 50 && rainfall <= 100) {
+recommendations.push  ['Peppers'];
+} else if (isWithinRange(soilPh, 5.8, 6.5) && temperature >= 15 && temperature <= 25 && rainfall >= 50 && rainfall <= 100) {
+recommendations.push  ['Tomatoes'];
+}
+
+        return ['Carrots','cucumbers'];
+    } else if (soilType === 'Silty') {
+        // Add conditions for Silty soil type
+        if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 15 && temperature <= 25 && rainfall >= 350 && rainfall <= 450) {
+            recommendations.push  ['Wheat'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 15 && temperature <= 20 && rainfall >= 300 && rainfall <= 500) {
+            recommendations.push  ['Oats'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 15 && temperature <= 25 && rainfall >= 400 && rainfall <= 600) {
+            recommendations.push  ['Barley'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature>= 15 && temperature <= 20 && rainfall >= 500 && rainfall <= 750) {
+            recommendations.push  ['Spinach'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 15 && temperature <= 20 && rainfall >= 500 && rainfall <= 750) {
+            recommendations.push ['Lattuce'];
+        }
+        return ['Wheat','Spinach'];
+    } else if (soilType === 'Alluvial') {
+        // Add conditions for Alluvial soil type
+        if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 15 && temperature <= 24  && rainfall >= 15 && rainfall <= 25 ) {
+            recommendations.push  ['Wheat'];
+        } else if (soilPh >= 5.5 && soilPh <= 7.0 && temperature >= 20 && temperature <= 30 && rainfall >= 1000 && rainfall <= 2500 ) {
+            recommendations.push  ['Sugarcane'];
+        } else if (soilPh >= 5.5 && soilPh <= 7.0 && temperature >= 20 && temperature <= 30 && rainfall >= 500 && rainfall <= 1000 ) {
+            recommendations.push  ['Cotton'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature>= 20 && temperature <= 30 && rainfall >= 500 && rainfall <= 1000 ) {
+            recommendations.push  ['Soybeans'];
+        } else if (soilPh >= 5.0 && soilPh <= 7.0 && temperature >= 20 && temperature <= 35 && rainfall >= 1000 && rainfall <= 2500 ) {
+            recommendations.push ['Rice'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 15 && temperature <= 25 && rainfall >= 450 && rainfall <= 750 ) {
+            recommendations.push  ['Carrot'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 15 && temperature <= 25 && rainfall >= 450 && rainfall <= 750 ) {
+            recommendations.push  ['Radishes'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 15 && temperature <= 25 && rainfall >= 450 &&rainfall <= 750 ) {
+            recommendations.push  ['Spinach'];
+        } else if (soilPh >= 5.0 && soilPh <= 7.0 && temperature >= 18 && temperature <= 32 && rainfall >= 450 && rainfall <= 750 ) {
+            recommendations.push  ['Maize'];
+        }
+        return ['Maize','Cotton'];
+    } else if (soilType === 'Clay') {
+        // Add conditions for Clay soil type
+        if (soilPh >= 5.8 && soilPh <= 6.5 && temperature >= 15 && temperature <= 20 && rainfall>= 500 && rainfall <= 800 ) {
+            recommendations.push  ['Cabbage'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 13 && temperature <= 18 && rainfall>= 25 && rainfall <= 50 ) {
+            recommendations.push  ['Peas'];
+        } else if (soilPh >= 5.8 && soilPh <= 6.5 && temperature >= 18 && temperature <= 24 && rainfall >= 25 && rainfall <= 50 ) {
+            recommendations.push  ['Broccoil'];
+        } else if (soilPh >= 5.8 && soilPh <= 6.5 && temperature>= 18 && temperature <= 24 && rainfall >= 15 && rainfall <= 24 ) {
+            recommendations.push  ['Cauliflower'];
+        } else if (soilPh >= 5.8 && soilPh <= 6.5 && temperature >= 15 && temperature <= 20 && rainfall >= 25 && rainfall<= 50 ) {
+            recommendations.push  ['Lattuce'];
+        }
+        return ['Lattuce','Cabbage','kale','Broccoil','Clover'];
+    } else if (soilType === 'Loam') {
+        // Add conditions for Loam soil type
+        if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 18 && temperature <= 32 && rainfall >= 75 && rainfall <= 125 ) {
+            recommendations.push [ 'Beans'];
+        } else if (soilPh >= 5.8 && soilPh <= 6.5 && temperature >= 18 && temperature <= 24 && rainfall >= 50 && rainfall <= 75 ) {
+            recommendations.push  ['Tomatoes'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.5 && temperature >= 21 && temperature <= 32 && rainfall >= 75 && rainfall <= 100 ) {
+            recommendations.push  ['Squash'];
+        } else if (soilPh >= 5.0 && soilPh <= 6.5 && temperature>= 21 && temperature <= 27 && rainfall >=  50 && rainfall <= 100 ) {
+            recommendations.push  ['Strawberies'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 10 && temperature <= 20 && rainfall >= 50 && rainfall <= 100 ) {
+            recommendations.push  ['Beets'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 21 && temperature <= 32 && rainfall >= 75 && rainfall <= 125 ) {
+            recommendations.push  ['Cucumbers'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 18 && temperature <= 24 && rainfall >= 75 && rainfall<= 125 ) {
+            recommendations.push  ['Pampkin'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 21 && temperature <= 32 && rainfall >= 75 && rainfall <= 127 ) {
+            recommendations.push  ['Melon'];
+        } else if (soilPh >= 6.0 && soilPh <= 7.0 && temperature >= 18 && temperature <= 32 && rainfall >= 75 && rainfall <= 125 ) {
+            recommendations.push  ['Maize'];
+        }
+        return ['Beans','Maize'];
+    }else if (soilType === 'Sandy' && soilPH >= 5.0 && soilPH <= 7.0 && rainfall >= 450 && rainfall <= 700 && temperature >= 18 && temperature <= 32  ) {
+        recommendations.push  ['Maize (Corn)'];
+     } else if (soilType === 'Silty' && soilPH >= 6.0 && soilPH <= 7.0 && rainfall >= 400 && rainfall <= 600 && temperature >= 15 && temperature <= 24 ) {
+        recommendations.push  ['Wheat'];
+     } else if (soilType === 'Alluvial' && soilPH >= 5.0 && soilPH <= 7.0 && rainfall >= 1000 && rainfall <= 2500 && temperature >= 20 && temperature <= 35 ) {
+        recommendations.push  ['Rice'];
+     } else if (soilType === 'Alluvial' && soilPH >= 6.0 && soilPH <= 7.5 && rainfall >= 500 && rainfall <= 1000 && temperature >= 20 && temperature <= 30 ) {
+        recommendations.push  ['Soybeans'];
+     } else if (soilType === 'Sandy' && soilPH >= 5.5 && soilPH <= 6.5 && rainfall >= 50 && rainfall <= 100 && temperature >= 15 && temperature <= 20 ) {
+        recommendations.push  ['Potatoes'];
+     } else if (soilType === 'Silty' && soilPH >= 6.0 && soilPH <= 7.5 && rainfall >= 400 && rainfall <= 600 && temperature >= 15 && temperature <= 25 ) {
+        recommendations.push  ('Barley');
+     } else if (soilType === 'Loam' && soilPH >= 5.5 && soilPH <= 7.5 && rainfall >= 75 && rainfall <= 125 && temperature >= 18 && temperature <= 32 ) {
+        recommendations.push  ('Sorghum');
+     } else if (soilType === 'Loam' && soilPH >= 6.0 && soilPH <= 7.5 && rainfall >= 100 && rainfall <= 300 && temperature >= 18 && temperature <= 32 ) {
+        recommendations.push  ('Sunflower');
+     } else if (soilType === 'Alluvial' && soilPH >= 5.5 && soilPH <= 7.0 && rainfall >= 500 && rainfall <= 1000 && temperature >= 18 && temperature <= 32 ) {
+        recommendations.push  ('Cotton');
+     } else if (soilType === 'Alluvial' && soilPH >= 5.5 && soilPH <= 7.0 && rainfall >= 1000 && rainfall <= 2500 && temperature >= 18 && temperature <= 32 ) {
+        recommendations.push  ('Sugarcane');
+     } else if (soilType === 'Sandy' && soilPH >= 5.0 && soilPH <= 7.0 && rainfall >= 200 && rainfall <= 400 && temperature >= 18 && temperature <= 32 ) {
+        returnrecommendations.push  ('Millet');
+     } else if (soilType === 'Silty' && soilPH >= 6.0 && soilPH <= 7.0 && rainfall >= 400 && rainfall <= 600 && temperature >= 15 && temperature <= 20 ) {
+        recommendations.push  ('Oats');
+     } else if (soilType === 'Loam' && soilPH >= 5.0 && soilPH <= 7.0 && rainfall >= 75 && rainfall <= 150 && temperature >= 13 && temperature <= 20 ) {
+        recommendations.push  ('Rye');
+     } else if (soilType === 'Alluvial' && soilPH >= 5.0 && soilPH <= 6.5 && rainfall >= 1000 && rainfall <= 1500 && temperature >= 20 && temperature <= 32 ) {
+        recommendations.push  ('Cassava');
+     } else if (soilType === 'Sandy' && soilPH >= 5.5 && soilPH <= 6.5 && rainfall >= 300 && rainfall <= 800 && temperature >= 18 && temperature <= 32 ) {
+        recommendations.push  ('Lentils');
+     } else if (soilType === 'Sandy' && soilPH >= 6.0 && soilPH <= 7.0 && rainfall >= 200 && rainfall <= 600 && temperature >= 14 && temperature <= 25 ) {
+        recommendations.push  ('Peanuts (Groundnuts)');
+     } else if (soilType === 'Loam' && soilPH >= 6.0 && soilPH <= 7.5 && rainfall >= 100 && rainfall <= 200 && temperature >= 15 && temperature <= 25 ) {
+        recommendations.push  ('Quinoa');
+     } else if (soilType === 'Clay' && soilPH >= 5.8 && soilPH <= 6.5 && rainfall >= 500 && rainfall <= 750 && temperature >= 18 && temperature <= 24 ) {
+        recommendations.push  ('Radish');
+     } else if (soilType === 'Loam' && soilPH >= 5.8 && soilPH <= 7.5 && rainfall >= 100 && rainfall <= 300 && temperature >= 15 && temperature <= 25 ) {
+        recommendations.push  ('Sesame');
+     } else if (soilType === 'Silty' && soilPH >= 6.0 && soilPH <= 7.0 && rainfall >= 400 && rainfall <= 600 && temperature >= 15 && temperature <= 25 ) {
+        recommendations.push  ('Soybeans');
+     } else if (soilType === 'Sandy' && soilPH >= 5.5 && soilPH <= 6.5 && rainfall >= 200 && rainfall <= 500 && temperature >= 18 && temperature <= 32 ) {
+        recommendations.push  ('Teff');
+     } else if (soilType === 'Loam' && soilPH >= 6.0 && soilPH <= 7.5 && rainfall >= 50 && rainfall <= 150 && temperature >= 18 && temperature <= 32 ) {
+        recommendations.push  ('Triticale');
+     } else if (soilType === 'Silty' && soilPH >= 6.0 && soilPH <= 7.0 && rainfall >= 350 && rainfall <= 450 && temperature >= 15 && temperature <= 25 ) {
+        recommendations.push  ('Wheat');
+     }  if (recommendations.length > 0) {
+return recommendations; // Return array of recommendations
+} else {
+recommendations.push('No recommendation available');
+return recommendations; // Return array with 'No recommendation available'
+}
+     }
